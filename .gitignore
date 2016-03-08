@@ -2,6 +2,12 @@
 .env.*.php
 .env.php
 .env
+.env.prod
+/vendor
+/node_modules
+.sql
+/.idea
+/.idea/workspace.xml
 
 # =========================
 # Operating System Files
