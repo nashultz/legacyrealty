@@ -1,5 +1,7 @@
 var elixir = require('laravel-elixir');
 
+require('laravel-elixir-vueify');
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -13,6 +15,7 @@ var elixir = require('laravel-elixir');
 
 elixir.config.assetsPath = 'public/themes/default/assets';
 elixir.config.publicPath = elixir.config.assetsPath;
+elixir.config.resourcePath = 'resources/assets';
 
 elixir.config.css.sass.pluginOptions.includePaths = [
     'node_modules/bootstrap-sass/assets/stylesheets',
@@ -20,6 +23,9 @@ elixir.config.css.sass.pluginOptions.includePaths = [
 ];
 
 elixir(function(mix) {
+
+    mix.browserify( 'vue-users.js', elixir.config.assetsPath+'/js/vjs_user.js');
+
     mix.copy('node_modules/font-awesome/fonts', elixir.config.publicPath+'/fonts');
 
     mix.copy('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js', elixir.config.publicPath+'/js/bootstrap.js');

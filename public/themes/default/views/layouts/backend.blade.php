@@ -146,5 +146,7 @@
         <div class="clearfix"></div>&nbsp;<div class="clearfix"></div>
     </div>
 </div>
+
+@yield('footer')
 </body>
 </html>
