@@ -5,7 +5,6 @@
 .env.prod
 /vendor
 /node_modules
-newdbdump.sql
 /.idea
 /.idea/workspace.xml
 
