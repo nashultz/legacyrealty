@@ -9,9 +9,14 @@ Route::get('auth/login', ['as'=>'auth.login','uses'=>'Auth\AuthController@getLog
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', ['as'=>'auth.logout','uses'=>'Auth\AuthController@logout']);
 
+Route::group(['middleware'=>'auth', 'prefix'=>'mylegacy/api'], function() {
+   Route::get('users', 'Backend\ApiController@users');
+   Route::post('users', 'Backend\ApiController@storeUser');
+});
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('mylegacy/users/{users}/confirm', ['as'=>'mylegacy.users.confirm','uses'=>'Backend\UsersController@confirm']);
-    Route::resource('mylegacy/users', 'Backend\UsersController', ['except'=>['show']]);
+    Route::resource('mylegacy/users', 'Backend\UsersController', ['only'=>['index']]);
 
     Route::get('mylegacy/pages/{pages}/confirm', ['as'=>'mylegacy.pages.confirm','uses'=>'Backend\PagesController@confirm']);
     Route::resource('mylegacy/pages', 'Backend\PagesController');
