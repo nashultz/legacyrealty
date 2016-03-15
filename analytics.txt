@@ -1,0 +1,7 @@
+ANALYTICS_SITE_ID=ga:115914520
+ANALYTICS_CLIENT_ID=398876683802-gea6cffdv29ugbhimk6c9935v58a1gqu.apps.googleusercontent.com
+ANALYTICS_CLIENT_SECRET=xC4UPxd3btlfhu0q5t_HLJGT
+ANALYTICS_SERVICE_EMAIL=legacy-realty@legacy-realty-inc.iam.gserviceaccount.com
+ANALYTICS_FILENAME=LegacyRealty-4e0bf2569b2a.p12
+ANALYTICS_COUNTRY=UnitedStates
+ANALYTICS_COUNTRY_CODE=US
