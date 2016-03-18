@@ -11251,6 +11251,7 @@ new _vue2.default({
         'error-handler': function errorHandler(response) {
             console.log(response);
             this.errors.push(response);
+            this.errors = [];
         }
     }
 });
