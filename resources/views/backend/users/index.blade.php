@@ -8,13 +8,11 @@
         <div class="col-md-12">
             <div class="alert alert-danger">
                 <strong>We found some errors!</strong>
-                <ul>
-                    <li v-for="error in errors">
-                        <span v-for="value in error">
-                            @{{ $key }}: @{{ value }}
-                        </span>
-                    </li>
-                </ul>
+                <div v-for="error in errors">
+                    <div v-for="value in error">
+                        @{{ $key }}: @{{ value }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
