@@ -11244,14 +11244,14 @@ new _vue2.default({
         'update-users': function updateUsers(data) {
             this.users.push(data);
             this.currentView = '';
-            var message = 'User has been created.';
-            this.message.push(message);
+            var amessage = 'User has been created.';
+            this.message.push(amessage);
         },
 
         'error-handler': function errorHandler(response) {
             console.log(response);
-            var message = 'Something went wrong with the inputs.';
-            this.message.push(message);
+            var amessage = 'Something went wrong with the inputs.';
+            this.message.push(amessage);
         }
     }
 });
