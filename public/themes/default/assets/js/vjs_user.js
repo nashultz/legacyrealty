@@ -11194,7 +11194,7 @@ new _vue2.default({
     data: {
         currentView: '',
         users: [],
-        errors: '',
+        errors: [],
         message: ''
     },
 
@@ -11218,8 +11218,8 @@ new _vue2.default({
             this.users.push = data;
         },
 
-        'error-handler': function errorHandler(data) {
-            this.errors.push = data;
+        'error-handler': function errorHandler(response) {
+            this.errors.push = response;
         }
     }
 });

@@ -37,7 +37,7 @@ new Vue({
     data: {
         currentView: '',
         users: [],
-        errors: '',
+        errors: [],
         message: ''
     },
 
@@ -60,8 +60,8 @@ new Vue({
             this.users.push = data;
         },
 
-        'error-handler': function(data) {
-            this.errors.push = data;
+        'error-handler': function(response) {
+            this.errors.push = response;
         }
     }
 });
