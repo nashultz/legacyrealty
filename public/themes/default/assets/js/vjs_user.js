@@ -11242,7 +11242,7 @@ new _vue2.default({
             this.errors = [];
         },
         clearMessages: function clearMessages() {
-            this.messages = [];
+            this.messages = '';
         }
     },
 
@@ -11251,9 +11251,9 @@ new _vue2.default({
             this.errors = [];
             this.users.push(data);
             this.currentView = '';
-            this.message.text = 'User has been created.';
-            this.message.status = 'success';
-            this.messages.push(this.message);
+            this.messages.text = 'User has been created.';
+            this.messages.status = 'success';
+            this.messages.push(messages);
         },
 
         'error-handler': function errorHandler(response) {
