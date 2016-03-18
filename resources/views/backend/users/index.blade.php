@@ -4,19 +4,21 @@
 
 @section('content')
 <div id="vjs-users">
-    <div class="row" v-show="errors.length > 0">
+    <div class="row" v-if="errors.length > 0">
         <div class="col-md-12">
             <div class="alert alert-danger">
                 <strong>We found some errors!</strong>
                 <div v-for="error in errors">
-                    <div v-for="value in error">
-                        @{{ $key }}: @{{ value }}
-                    </div>
+                    <ul>
+                        <li v-for="value in error">
+                            @{{ value }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row" v-if="message">
+    <div class="row" v-if="message.length > 0">
         <div class="col-md-12">
             <div class="alert alert-@{{ message.status }}">
                 <strong>We found some errors!</strong>
