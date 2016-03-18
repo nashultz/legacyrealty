@@ -11222,10 +11222,7 @@ new _vue2.default({
         currentView: '',
         users: [],
         errors: [],
-        message: {
-            status: '',
-            text: ''
-        }
+        message: []
     },
 
     created: function created() {
@@ -11253,9 +11250,7 @@ new _vue2.default({
 
         'error-handler': function errorHandler(response) {
             console.log(response);
-            this.message.status = 'error';
-            this.message.text = 'Something went wrong with the inputs.';
-            this.message = [];
+            this.errors.push(response);
         }
     }
 });
