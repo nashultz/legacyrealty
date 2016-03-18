@@ -11216,10 +11216,13 @@ new _vue2.default({
     events: {
         'update-users': function updateUsers(data) {
             this.users.push = data;
+            this.currentView.push = '';
+            console.log('update-users hit');
         },
 
         'error-handler': function errorHandler(response) {
             this.errors.push = response;
+            console.log('error-handler hit');
         }
     }
 });

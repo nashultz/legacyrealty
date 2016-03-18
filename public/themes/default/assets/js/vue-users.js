@@ -58,10 +58,13 @@ new Vue({
     events: {
         'update-users': function(data) {
             this.users.push = data;
+            this.currentView.push = '';
+            console.log('update-users hit')
         },
 
         'error-handler': function(response) {
             this.errors.push = response;
+            console.log('error-handler hit')
         }
     }
 });
