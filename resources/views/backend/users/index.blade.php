@@ -82,6 +82,29 @@
         {!! Form::submit('Create New User',['class'=>'btn btn-success']) !!}
     </form>
 </template>
+<template id="update-existing-user">
+    <h3>Edit User: @{{ user.name }}</h3>
+    <form @submit="createNewUser">
+    {{csrf_field()}}
+    <div class="form-group">
+        {!! Form::label('name') !!}
+        {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'user.name']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('email') !!}
+        {!! Form::email('email',null,['class'=>'form-control', 'v-model'=>'user.email']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('password') !!}
+        {!! Form::password('password', ['class'=>'form-control', 'v-model'=>'user.password']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('password_confirmation') !!}
+        {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'user.password_confirmation']) !!}
+    </div>
+    {!! Form::submit('Create New User',['class'=>'btn btn-success']) !!}
+    </form>
+</template>
 @endsection
 
 @section('footer')

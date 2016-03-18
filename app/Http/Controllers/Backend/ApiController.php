@@ -32,4 +32,9 @@ class ApiController extends Controller
 
         return $user;
     }
+
+    public function editUser($id)
+    {
+        return $this->users->findOrFail($id);
+    }
 }
