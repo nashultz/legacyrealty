@@ -18,10 +18,10 @@
     </div>
     <div class="row" v-if="message">
         <div class="col-md-12">
-            <div class="alert alert-danger">
+            <div class="alert alert-@{{ message.status }}">
                 <strong>We found some errors!</strong>
                 <ul>
-                    <li> @{{ message }}</li>
+                    <li> @{{ message.text }}</li>
                 </ul>
             </div>
         </div>
