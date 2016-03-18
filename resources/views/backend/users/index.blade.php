@@ -9,7 +9,9 @@
             <div class="alert alert-danger">
                 <strong>We found some errors!</strong>
                 <ul>
-                    <li v-for="error in errors">@{{ error.email }}</li>
+                    <li v-for="value in errors">
+                        {{ $key }} : {{ value }}
+                    </li>
                 </ul>
             </div>
         </div>
