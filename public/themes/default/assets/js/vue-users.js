@@ -86,6 +86,7 @@ new Vue({
 
     events: {
         'update-users': function(data) {
+            this.errors = [];
             this.users.push(data);
             this.currentView = '';
             this.message.text = 'User has been created.';
