@@ -11217,6 +11217,7 @@ new _vue2.default({
         'update-users': function updateUsers(data) {
             this.users.push = data;
             this.currentView = '';
+            console.log('users data: ' + data);
             console.log('update-users hit');
         },
 

@@ -59,6 +59,7 @@ new Vue({
         'update-users': function(data) {
             this.users.push = data;
             this.currentView = '';
+            console.log('users data: ' + data)
             console.log('update-users hit')
         },
 
