@@ -11157,7 +11157,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _vue2.default.use(require('vue-resource'));
 
-_vue2.default.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('input[name="_token"]').getAttribute('value');
+_vue2.default.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#_token').getAttribute('value');
 
 _vue2.default.component('users-create-view', {
     template: '#create-new-user',
