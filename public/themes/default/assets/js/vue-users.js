@@ -20,8 +20,10 @@ Vue.component('users-create-view', {
     methods: {
         createNewUser(e) {
             e.preventDefault()
-            this.$http.post('api/users', this.user, function(data) {
-                this.$dispach('update-users', data)
+            this.$http.post('api/users', this.user).then(function(response) {
+                this.$dispatch('update-users', response.data);
+            }, function(response) {
+                this.$dispatch('error-handler', response.data);
             });
         }
     }
@@ -48,8 +50,18 @@ new Vue({
             this.$http.get('api/users').then(function(response) {
                 this.users = response.data;
             }, function (response) {
-                this.errors.push = response.data;
+                this.errors = response.data;
             }.bind(this));
+        }
+    },
+
+    events: {
+        'update-users': function(data) {
+            this.users.push = data;
+        },
+
+        'error-handler': function(data) {
+            this.errors.push = data;
         }
     }
 });
