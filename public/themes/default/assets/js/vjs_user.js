@@ -11222,7 +11222,10 @@ new _vue2.default({
         currentView: '',
         users: [],
         errors: [],
-        message: []
+        message: {
+            status: '',
+            text: ''
+        }
     },
 
     created: function created() {
@@ -11244,14 +11247,15 @@ new _vue2.default({
         'update-users': function updateUsers(data) {
             this.users.push(data);
             this.currentView = '';
-            var amessage = 'User has been created.';
-            this.message.push(amessage);
+            this.message.text = 'User has been created.';
+            this.message.status = 'success';
         },
 
         'error-handler': function errorHandler(response) {
             console.log(response);
-            var amessage = 'Something went wrong with the inputs.';
-            this.message.push(amessage);
+            this.message.status = 'error';
+            this.message.text = 'Something went wrong with the inputs.';
+            this.message = [];
         }
     }
 });
