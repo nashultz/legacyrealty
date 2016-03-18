@@ -6,7 +6,8 @@
 <div id="vjs-users">
     <div class="row" v-if="errors.length > 0">
         <div class="col-md-12">
-            <div class="alert alert-danger">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="clearError"><span aria-hidden="true">&times;</span></button>
                 <strong>We found some errors!</strong>
                 <div v-for="error in errors">
                     <ul>
