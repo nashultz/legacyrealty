@@ -92,9 +92,8 @@ new Vue({
             this.errors = [];
             this.users.push(data);
             this.currentView = '';
-            this.messages.text = 'User has been created.';
-            this.messages.status = 'success';
-            this.messages.push(messages);
+            var message = {'text': 'User has been created.', 'status':'success'};
+            this.messages.push(message);
         },
 
         'error-handler': function(response) {
