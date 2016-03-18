@@ -67,11 +67,11 @@
         </div>
         <div class="form-group">
             {!! Form::label('password') !!}
-            {!! Form::password('password',['class'=>'form-control', 'v-model'=>'']) !!}
+            {!! Form::password('password', ['class'=>'form-control', 'v-model'=>'user.password']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('password_confirmation') !!}
-            {!! Form::password('password_confirmation',['class'=>'form-control', 'v-model'=>'']) !!}
+            {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'user.password_confirmation']) !!}
         </div>
         {!! Form::submit('Create New User',['class'=>'btn btn-success']) !!}
     </form>
