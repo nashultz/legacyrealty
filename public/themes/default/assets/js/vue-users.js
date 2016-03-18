@@ -35,7 +35,8 @@ new Vue({
     data: {
         currentView: '',
         users: [],
-        errors: ''
+        errors: '',
+        message: ''
     },
 
     created() {

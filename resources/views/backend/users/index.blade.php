@@ -14,6 +14,16 @@
             </div>
         </div>
     </div>
+    <div class="row" v-if="message">
+        <div class="col-md-12">
+            <div class="alert alert-danger">
+                <strong>We found some errors!</strong>
+                <ul>
+                    <li> @{{ message }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-6">
         <a class="btn btn-success" @click="currentView='users-create-view'"><i class="fa fa-fw fa-user-plus"></i> Create New User</a>
         <table class="table table-hover">

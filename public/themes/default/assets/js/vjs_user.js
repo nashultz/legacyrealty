@@ -11192,7 +11192,8 @@ new _vue2.default({
     data: {
         currentView: '',
         users: [],
-        errors: ''
+        errors: '',
+        message: ''
     },
 
     created: function created() {
