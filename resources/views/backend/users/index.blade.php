@@ -37,6 +37,7 @@
     <h3>Create New User</h3>
     <form @submit="createNewUser">
         {{csrf_field()}}
+        {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'user.name']) !!}
     </form>
 </template>
 @endsection
