@@ -9,8 +9,8 @@
             <div class="alert alert-danger">
                 <strong>We found some errors!</strong>
                 <ul>
-                    <li v-for="value in errors">
-                        @{{ $key }} : @{{ value }}
+                    <li v-for="error in errors">
+                        @{{ error }}
                     </li>
                 </ul>
             </div>
