@@ -42,7 +42,7 @@ class RouteServiceProvider extends ServiceProvider
             require app_path('Http/routes.php');
         });
 
-        foreach(Page::all() as $page)
+        /*foreach(Page::all() as $page)
         {
             $router->get($page->uri, ['as'=>$page->name, function() use ($page, $router){
                 return $this->app->call('Legacy\Http\Controllers\PageController@show',[
@@ -50,6 +50,6 @@ class RouteServiceProvider extends ServiceProvider
                     'parameters'=>$router->current()->parameters()
                 ]);
             }]);
-        }
+        }*/
     }
 }
