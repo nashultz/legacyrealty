@@ -11240,6 +11240,9 @@ new _vue2.default({
         },
         clearError: function clearError() {
             this.errors = [];
+        },
+        clearMessages: function clearMessages() {
+            this.messages = [];
         }
     },
 
@@ -11250,10 +11253,10 @@ new _vue2.default({
             this.currentView = '';
             this.message.text = 'User has been created.';
             this.message.status = 'success';
+            this.messages.push(this.message);
         },
 
         'error-handler': function errorHandler(response) {
-            console.log(response);
             this.errors.push(response);
         }
     }

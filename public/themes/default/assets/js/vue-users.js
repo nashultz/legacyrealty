@@ -81,6 +81,9 @@ new Vue({
         },
         clearError() {
             this.errors = [];
+        },
+        clearMessages() {
+            this.messages = []
         }
     },
 
@@ -91,10 +94,10 @@ new Vue({
             this.currentView = '';
             this.message.text = 'User has been created.';
             this.message.status = 'success';
+            this.messages.push(this.message);
         },
 
         'error-handler': function(response) {
-            console.log(response);
             this.errors.push(response);
         }
     }
