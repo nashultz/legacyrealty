@@ -35,5 +35,17 @@ new Vue({
     data: {
         currentView: '',
         users: []
+    },
+
+    created() {
+        this.fetchUsersList();
+    },
+
+    methods: {
+        fetchUsersList() {
+            this.$http.get('api/users').then(function(response) {
+                this.users = response.data;
+            }.bind(this));
+        }
     }
 });

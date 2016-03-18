@@ -5,7 +5,7 @@
 @section('content')
 <div id="vjs-users">
     <div class="col-lg-6">
-        <a class="btn btn-success" href="#"><i class="fa fa-fw fa-user-plus"></i> Create New User</a>
+        <a class="btn btn-success" @click="currentView='users-create-view'"><i class="fa fa-fw fa-user-plus"></i> Create New User</a>
         <table class="table table-hover">
             <thead>
             <tr>
@@ -16,10 +16,9 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($users as $user)
-                <tr>
-                    <th><a href="#">{{$user->name}}</a></th>
-                    <th>{{$user->email}}</th>
+                <tr v-for="user in users">
+                    <th><a href="#">@{{user.name}}</a></th>
+                    <th>@{{user.email}}</th>
                     <th>
                         <a href="#"><i class="fa fa-fw fa-edit"></i></a>
                     </th>
@@ -30,13 +29,17 @@
             @endforeach
             </tbody>
         </table>
-
-        {!! $users->render() !!}
     </div>
     <div class="col-lg-6">
-
+        <component :is="currentView"></component>
     </div>
 </div>
+<template id="create-new-user">
+    <h3>Create New User</h3>
+    <form @submit="createNewUser">
+        {{csrf_field()}}
+    </form>
+</template>
 @endsection
 
 @section('footer')
