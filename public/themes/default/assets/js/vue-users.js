@@ -1,7 +1,7 @@
 import Vue from 'vue';
 Vue.use(require('vue-resource'));
 
-Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('#_token').getAttribute('value');
+Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('input[name="_token"').getAttribute('value');
 
 Vue.component('users-create-view', {
     template: '#create-new-user',
