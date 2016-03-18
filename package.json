@@ -1,6 +1,8 @@
 {
   "private": true,
-  "devDependencies": {},
+  "devDependencies": {
+    "vue-resource": "^0.7.0"
+  },
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
     "eonasdan-bootstrap-datetimepicker": "^4.15.35",
