@@ -11222,7 +11222,7 @@ new _vue2.default({
         currentView: '',
         users: [],
         errors: [],
-        message: ''
+        message: []
     },
 
     created: function created() {
