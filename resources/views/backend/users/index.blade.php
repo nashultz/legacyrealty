@@ -3,7 +3,7 @@
 @section('title', 'Users')
 
 @section('content')
-<div class="row" v-if="errors">
+<div class="row" v-show="errors">
     <div class="col-md-12">
         <div class="alert alert-danger">
             <strong>We found some errors!</strong>
