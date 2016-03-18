@@ -78,6 +78,9 @@ new Vue({
             }, function (response) {
                 this.errors = response.data;
             }.bind(this));
+        },
+        clearError() {
+            this.errors = [];
         }
     },
 

@@ -25,6 +25,7 @@
                 <ul>
                     <li> @{{ message.text }}</li>
                 </ul>
+                <span class="alert-close" @click="clearError"><i class="fa fa-close"></i></span>
             </div>
         </div>
     </div>
