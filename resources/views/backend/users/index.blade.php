@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="row" v-if="message.length > 0">
+    <div class="row" v-if="messages.length > 0" v-for="message in messages">
         <div class="col-md-12">
             <div class="alert alert-@{{ message.status }} alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="clearMessages"><span aria-hidden="true">&times;</span></button>
