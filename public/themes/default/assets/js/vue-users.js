@@ -64,7 +64,7 @@ new Vue({
         currentView: '',
         users: [],
         errors: [],
-        message: []
+        messages: []
     },
 
     created() {
