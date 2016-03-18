@@ -11186,6 +11186,33 @@ _vue2.default.component('users-create-view', {
     }
 });
 
+_vue2.default.component('users-edit-view', {
+    template: '#edit-user',
+
+    data: function data() {
+        return {
+            user: {
+                name: null,
+                email: null,
+                password: null,
+                password_confirmation: null
+            }
+        };
+    },
+
+
+    methods: {
+        createNewUser: function createNewUser(e) {
+            e.preventDefault();
+            this.$http.post('api/users', this.user).then(function (response) {
+                this.$dispatch('update-users', response.data);
+            }, function (response) {
+                this.$dispatch('error-handler', response.data);
+            });
+        }
+    }
+});
+
 new _vue2.default({
     el: '#vjs-users',
 
@@ -11217,13 +11244,14 @@ new _vue2.default({
         'update-users': function updateUsers(data) {
             this.users.push(data);
             this.currentView = '';
-            console.log('users data: ' + data);
-            console.log('update-users hit');
+            var message = 'User has been created.';
+            this.message.push(message);
         },
 
         'error-handler': function errorHandler(response) {
-            this.errors.push(response);
-            console.log('error-handler hit');
+            console.log(response);
+            var message = 'Something went wrong with the inputs.';
+            this.message.push(message);
         }
     }
 });
