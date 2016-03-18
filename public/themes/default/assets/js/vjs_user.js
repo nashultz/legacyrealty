@@ -11177,8 +11177,10 @@ _vue2.default.component('users-create-view', {
     methods: {
         createNewUser: function createNewUser(e) {
             e.preventDefault();
-            this.$http.post('api/users', this.user, function (data) {
-                this.$dispach('update-users', data);
+            this.$http.post('api/users', this.user).then(function (response) {
+                this.$dispatch('update-users', response.data);
+            }, function (response) {
+                this.$dispatch('error-handler', response.data);
             });
         }
     }
@@ -11206,8 +11208,18 @@ new _vue2.default({
             this.$http.get('api/users').then(function (response) {
                 this.users = response.data;
             }, function (response) {
-                this.errors.push = response.data;
+                this.errors = response.data;
             }.bind(this));
+        }
+    },
+
+    events: {
+        'update-users': function updateUsers(data) {
+            this.users.push = data;
+        },
+
+        'error-handler': function errorHandler(data) {
+            this.errors.push = data;
         }
     }
 });
