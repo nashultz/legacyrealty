@@ -4,12 +4,12 @@
 
 @section('content')
 <div id="vjs-users">
-    <div class="row" v-show="errors">
+    <div class="row" v-show="errors.length > 0">
         <div class="col-md-12">
             <div class="alert alert-danger">
                 <strong>We found some errors!</strong>
                 <ul>
-                    <li v-for="error in errors">@{{ error.* }}</li>
+                    <li v-for="error in errors">@{{ error }}</li>
                 </ul>
             </div>
         </div>
