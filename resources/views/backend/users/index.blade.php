@@ -37,7 +37,23 @@
     <h3>Create New User</h3>
     <form @submit="createNewUser">
         {{csrf_field()}}
-        {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'user.name']) !!}
+        <div class="form-group">
+            {!! Form::label('name') !!}
+            {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'user.name']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('email') !!}
+            {!! Form::email('email',null,['class'=>'form-control', 'v-model'=>'user.email']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('password') !!}
+            {!! Form::password('password',['class'=>'form-control', 'v-model'=>'']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('password_confirmation') !!}
+            {!! Form::password('password_confirmation',['class'=>'form-control', 'v-model'=>'']) !!}
+        </div>
+        {!! Form::submit('Create New User',['class'=>'btn btn-success']) !!}
     </form>
 </template>
 @endsection
