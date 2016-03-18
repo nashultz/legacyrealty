@@ -150,6 +150,7 @@ return [
         Baum\Providers\BaumServiceProvider::class,
         Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
 
+
     ],
 
     /*
