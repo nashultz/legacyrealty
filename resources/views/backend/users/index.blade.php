@@ -10,7 +10,7 @@
                 <strong>We found some errors!</strong>
                 <ul>
                     <li v-for="error in errors">
-                        @{{ error }}
+                        @{{ error.$value }}
                     </li>
                 </ul>
             </div>
