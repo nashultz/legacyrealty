@@ -79,7 +79,7 @@ new Vue({
                 this.errors = response.data;
             }.bind(this));
         },
-        clearError() {
+        clearErrors() {
             this.errors = [];
         },
         clearMessages() {

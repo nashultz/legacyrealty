@@ -7,7 +7,7 @@
     <div class="row" v-if="errors.length > 0">
         <div class="col-md-12">
             <div class="alert alert-danger alert-dismissible" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="clearError"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="clearErrors"><span aria-hidden="true">&times;</span></button>
                 <strong>We found some errors!</strong>
                 <div v-for="error in errors">
                     <ul>
@@ -21,12 +21,16 @@
     </div>
     <div class="row" v-if="message.length > 0">
         <div class="col-md-12">
-            <div class="alert alert-@{{ message.status }}">
-                <strong>We found some errors!</strong>
-                <ul>
-                    <li> @{{ message.text }}</li>
-                </ul>
-                <span class="alert-close" @click="clearError"><i class="fa fa-close"></i></span>
+            <div class="alert alert-@{{ message.status }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="clearMessages"><span aria-hidden="true">&times;</span></button>
+                <strong>@{{ message.status | capitalize }}</strong>
+                <div v-for="error in errors">
+                    <ul>
+                        <li>
+                            @{{ message.text }}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

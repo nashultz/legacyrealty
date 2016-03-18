@@ -11238,7 +11238,7 @@ new _vue2.default({
                 this.errors = response.data;
             }.bind(this));
         },
-        clearError: function clearError() {
+        clearErrors: function clearErrors() {
             this.errors = [];
         },
         clearMessages: function clearMessages() {
