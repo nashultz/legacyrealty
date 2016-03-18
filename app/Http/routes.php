@@ -1,6 +1,6 @@
 <?php
 
-Route::controller('auth/password', 'Auth\PasswordController', [
+/*Route::controller('auth/password', 'Auth\PasswordController', [
   'getEmail' => 'auth.password.email',
   'getReset' => 'auth.password.reset'
 ]);
@@ -75,4 +75,8 @@ Route::get('agents/{employee}', ['as'=>'site.agents.show','uses'=>'HomeControlle
 Route::get('twitter', function()
 {
     return View::make('twitter.get-tweets1-1');
+});*/
+
+Route::get('/', function() {
+    return 'hello';
 });
