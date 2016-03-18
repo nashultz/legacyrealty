@@ -26,7 +26,6 @@
                         <a href="#"><i class="fa fa-fw fa-trash"></i></a>
                     </th>
                 </tr>
-            @endforeach
             </tbody>
         </table>
     </div>
