@@ -23,14 +23,7 @@
         <div class="col-md-12">
             <div class="alert alert-@{{ message.status }} alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close" @click="clearMessages"><span aria-hidden="true">&times;</span></button>
-                <strong>@{{ message.status | capitalize }}</strong>
-                <div v-for="error in errors">
-                    <ul>
-                        <li>
-                            @{{ message.text }}
-                        </li>
-                    </ul>
-                </div>
+                <strong>@{{ message.status | capitalize }}</strong> @{{ message.text }}
             </div>
         </div>
     </div>
