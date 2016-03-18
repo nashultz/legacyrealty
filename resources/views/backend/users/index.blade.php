@@ -3,6 +3,16 @@
 @section('title', 'Users')
 
 @section('content')
+<div class="row" v-if="errors">
+    <div class="col-md-12">
+        <div class="alert alert-danger">
+            <strong>We found some errors!</strong>
+            <ul>
+                <li v-for="error in errors">@{{ error.* }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
 <div id="vjs-users">
     <div class="col-lg-6">
         <a class="btn btn-success" @click="currentView='users-create-view'"><i class="fa fa-fw fa-user-plus"></i> Create New User</a>

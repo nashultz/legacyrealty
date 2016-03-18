@@ -34,7 +34,8 @@ new Vue({
 
     data: {
         currentView: '',
-        users: []
+        users: [],
+        errors: []
     },
 
     created() {
@@ -45,6 +46,8 @@ new Vue({
         fetchUsersList() {
             this.$http.get('api/users').then(function(response) {
                 this.users = response.data;
+            }, function (response) {
+                this.errors = response.data;
             }.bind(this));
         }
     }

@@ -11191,7 +11191,8 @@ new _vue2.default({
 
     data: {
         currentView: '',
-        users: []
+        users: [],
+        errors: []
     },
 
     created: function created() {
@@ -11203,6 +11204,8 @@ new _vue2.default({
         fetchUsersList: function fetchUsersList() {
             this.$http.get('api/users').then(function (response) {
                 this.users = response.data;
+            }, function (response) {
+                this.errors = response.data;
             }.bind(this));
         }
     }
