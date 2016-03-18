@@ -5,7 +5,7 @@
 @section('content')
 <div id="vjs-users">
     <div class="col-lg-6">
-        <a class="btn btn-success" href="{{route('mylegacy.users.create')}}"><i class="fa fa-fw fa-user-plus"></i> Create New User</a>
+        <a class="btn btn-success" href="#"><i class="fa fa-fw fa-user-plus"></i> Create New User</a>
         <table class="table table-hover">
             <thead>
             <tr>
