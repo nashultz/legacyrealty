@@ -18,13 +18,13 @@
             <tbody>
             @foreach($users as $user)
                 <tr>
-                    <th><a href="{{route('mylegacy.users.edit', $user->id)}}">{{$user->name}}</a></th>
+                    <th><a href="#">{{$user->name}}</a></th>
                     <th>{{$user->email}}</th>
                     <th>
-                        <a href="{{route('mylegacy.users.edit', $user->id)}}"><i class="fa fa-fw fa-edit"></i></a>
+                        <a href="#"><i class="fa fa-fw fa-edit"></i></a>
                     </th>
                     <th>
-                        <a href="{{route('mylegacy.users.confirm', $user->id)}}"><i class="fa fa-fw fa-trash"></i></a>
+                        <a href="#"><i class="fa fa-fw fa-trash"></i></a>
                     </th>
                 </tr>
             @endforeach
