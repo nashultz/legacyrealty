@@ -5,6 +5,7 @@ namespace Legacy\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 
 use Legacy\Http\Requests;
+use Legacy\Http\Requests\StoreUserRequest;
 use Legacy\User;
 
 class ApiController extends Controller
