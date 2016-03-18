@@ -35,7 +35,7 @@ new Vue({
     data: {
         currentView: '',
         users: [],
-        errors: []
+        errors: ''
     },
 
     created() {
@@ -47,7 +47,7 @@ new Vue({
             this.$http.get('api/users').then(function(response) {
                 this.users = response.data;
             }, function (response) {
-                this.errors = response.data;
+                this.errors.push = response.data;
             }.bind(this));
         }
     }

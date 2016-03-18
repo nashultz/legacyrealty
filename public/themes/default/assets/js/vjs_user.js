@@ -11192,7 +11192,7 @@ new _vue2.default({
     data: {
         currentView: '',
         users: [],
-        errors: []
+        errors: ''
     },
 
     created: function created() {
@@ -11205,7 +11205,7 @@ new _vue2.default({
             this.$http.get('api/users').then(function (response) {
                 this.users = response.data;
             }, function (response) {
-                this.errors = response.data;
+                this.errors.push = response.data;
             }.bind(this));
         }
     }
