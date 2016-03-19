@@ -11193,19 +11193,23 @@ _vue2.default.component('users-edit-view', {
 
     data: function data() {
         return {
-            u: []
+            u: {
+                name: null,
+                email: null,
+                password: null,
+                password_confirmation: null
+            }
         };
     },
     created: function created(user) {
         this.fetchUserData(user);
-        console.log(user);
     },
 
 
     methods: {
         fetchUserData: function fetchUserData(user) {
             this.$http.get('api/users/', user).then(function (response) {
-                this.u.push(response.data);
+                this.u = response.data;
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
             });
