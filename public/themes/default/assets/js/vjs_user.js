@@ -11191,7 +11191,24 @@ _vue2.default.component('users-edit-view', {
 
     props: ['user'],
 
+    data: function data() {
+        return {
+            u: []
+        };
+    },
+    ready: function ready(user) {
+        this.fetchUserData(user);
+    },
+
+
     methods: {
+        fetchUserData: function fetchUserData(user) {
+            this.$http.get('api/users/' + user).then(function (response) {
+                this.u = response.data;
+            }, function (response) {
+                this.$dispatch('error-handler', response.data);
+            });
+        },
         updateUser: function updateUser(e, user) {
             e.preventDefault();
             this.$http.post('api/users/' + user, this.user).then(function (response) {
