@@ -11189,17 +11189,7 @@ _vue2.default.component('users-create-view', {
 _vue2.default.component('users-edit-view', {
     template: '#update-existing-user',
 
-    data: function data() {
-        return {
-            user: {
-                name: null,
-                email: null,
-                password: null,
-                password_confirmation: null
-            }
-        };
-    },
-
+    props: ['user'],
 
     methods: {
         updateUser: function updateUser(e, user) {

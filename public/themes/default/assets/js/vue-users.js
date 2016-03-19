@@ -32,16 +32,7 @@ Vue.component('users-create-view', {
 Vue.component('users-edit-view', {
     template: '#update-existing-user',
 
-    data() {
-        return {
-            user: {
-                name: null,
-                email: null,
-                password: null,
-                password_confirmation: null
-            }
-        }
-    },
+    props: ['user'],
 
     methods: {
         updateUser(e, user) {
