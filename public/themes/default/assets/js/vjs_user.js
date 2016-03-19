@@ -11196,15 +11196,16 @@ _vue2.default.component('users-edit-view', {
             u: []
         };
     },
-    created: function created() {
-        this.fetchUserData();
+    created: function created(user) {
+        this.fetchUserData(user);
+        console.log(user);
     },
 
 
     methods: {
-        fetchUserData: function fetchUserData() {
+        fetchUserData: function fetchUserData(user) {
             this.$http.get('api/users/', user).then(function (response) {
-                this.u = response.data;
+                this.u.push(response.data);
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
             });
