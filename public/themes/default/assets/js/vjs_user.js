@@ -11213,6 +11213,7 @@ _vue2.default.component('users-edit-view', {
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
             }.bind(this));
+            console.log(u);
         },
         updateUser: function updateUser(e, user) {
             e.preventDefault();
