@@ -11198,6 +11198,7 @@ _vue2.default.component('users-edit-view', {
     },
     ready: function ready(user) {
         this.fetchUserData(user);
+        console.log(user);
     },
 
 
