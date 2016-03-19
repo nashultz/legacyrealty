@@ -40,13 +40,12 @@ Vue.component('users-edit-view', {
         }
     },
 
-    ready(user) {
-        this.fetchUserData(user)
-        console.log(user);
+    created() {
+        this.fetchUserData()
     },
 
     methods: {
-        fetchUserData(user) {
+        fetchUserData() {
           this.$http.get('api/users/', user).then(function(response) {
               this.u = response.data;
           }, function(response) {
