@@ -88,19 +88,19 @@
     {{csrf_field()}}
     <div class="form-group">
         {!! Form::label('name') !!}
-        {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'user.name']) !!}
+        {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'u.name']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('email') !!}
-        {!! Form::email('email',null,['class'=>'form-control', 'v-model'=>'user.email']) !!}
+        {!! Form::email('email',null,['class'=>'form-control', 'v-model'=>'u.email']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('password') !!}
-        {!! Form::password('password', ['class'=>'form-control', 'v-model'=>'user.password']) !!}
+        {!! Form::password('password', ['class'=>'form-control', 'v-model'=>'u.password']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('password_confirmation') !!}
-        {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'user.password_confirmation']) !!}
+        {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'u.password_confirmation']) !!}
     </div>
     {!! Form::submit('Update User',['class'=>'btn btn-success']) !!}
     </form>
