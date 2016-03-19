@@ -11187,7 +11187,7 @@ _vue2.default.component('users-create-view', {
 });
 
 _vue2.default.component('users-edit-view', {
-    template: '#edit-user',
+    template: '#update-existing-user',
 
     data: function data() {
         return {
@@ -11202,9 +11202,9 @@ _vue2.default.component('users-edit-view', {
 
 
     methods: {
-        createNewUser: function createNewUser(e) {
+        updateUser: function updateUser(e, user) {
             e.preventDefault();
-            this.$http.post('api/users', this.user).then(function (response) {
+            this.$http.post('api/users/' + user, this.user).then(function (response) {
                 this.$dispatch('update-users', response.data);
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
@@ -11216,7 +11216,7 @@ _vue2.default.component('users-edit-view', {
 new _vue2.default({
     el: '#vjs-users',
 
-    components: ['users-create-view'],
+    components: ['users-create-view', 'users-edit-view'],
 
     data: {
         currentView: '',
