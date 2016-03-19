@@ -84,7 +84,7 @@
 </template>
 <template id="update-existing-user">
     <h3>Edit User: @{{ user.name }}</h3>
-    <form @submit="createNewUser">
+    <form @submit="updateUser">
     {{csrf_field()}}
     <div class="form-group">
         {!! Form::label('name') !!}
@@ -102,7 +102,7 @@
         {!! Form::label('password_confirmation') !!}
         {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'user.password_confirmation']) !!}
     </div>
-    {!! Form::submit('Create New User',['class'=>'btn btn-success']) !!}
+    {!! Form::submit('Update User',['class'=>'btn btn-success']) !!}
     </form>
 </template>
 @endsection

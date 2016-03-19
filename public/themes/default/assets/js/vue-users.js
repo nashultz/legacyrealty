@@ -30,7 +30,7 @@ Vue.component('users-create-view', {
 });
 
 Vue.component('users-edit-view', {
-    template: '#edit-user',
+    template: '#update-existing-user',
 
     data() {
         return {
@@ -44,9 +44,9 @@ Vue.component('users-edit-view', {
     },
 
     methods: {
-        createNewUser(e) {
+        updateUser(e, user) {
             e.preventDefault()
-            this.$http.post('api/users', this.user).then(function(response) {
+            this.$http.post('api/users/'+ user, this.user).then(function(response) {
                 this.$dispatch('update-users', response.data);
             }, function(response) {
                 this.$dispatch('error-handler', response.data);
@@ -58,7 +58,7 @@ Vue.component('users-edit-view', {
 new Vue({
     el: '#vjs-users',
 
-    components: ['users-create-view'],
+    components: ['users-create-view', 'users-edit-view'],
 
     data: {
         currentView: '',
