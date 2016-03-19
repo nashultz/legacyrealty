@@ -11204,7 +11204,7 @@ _vue2.default.component('users-edit-view', {
 
     methods: {
         fetchUserData: function fetchUserData(user) {
-            this.$http.get('api/users/' + user).then(function (response) {
+            this.$http.get('api/users/', user).then(function (response) {
                 this.u = response.data;
             }, function (response) {
                 this.$dispatch('error-handler', response.data);

@@ -47,7 +47,7 @@ Vue.component('users-edit-view', {
 
     methods: {
         fetchUserData(user) {
-          this.$http.get('api/users/'+ user).then(function(response) {
+          this.$http.get('api/users/', user).then(function(response) {
               this.u = response.data;
           }, function(response) {
               this.$dispatch('error-handler', response.data);

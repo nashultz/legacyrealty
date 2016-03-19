@@ -83,7 +83,7 @@
     </form>
 </template>
 <template id="update-existing-user">
-    <h3>Edit User: @{{ user.name }}</h3>
+    <h3>Edit User: @{{ u.name }}</h3>
     <form @submit="updateUser">
     {{csrf_field()}}
     <div class="form-group">
