@@ -11208,7 +11208,7 @@ _vue2.default.component('users-edit-view', {
 
     methods: {
         fetchUserData: function fetchUserData(user) {
-            this.$http.get('api/users/', user).then(function (response) {
+            this.$http.get('api/user/', user).then(function (response) {
                 this.u = response.data;
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
@@ -11217,7 +11217,7 @@ _vue2.default.component('users-edit-view', {
         },
         updateUser: function updateUser(e, user) {
             e.preventDefault();
-            this.$http.post('api/users/', user, this.usr).then(function (response) {
+            this.$http.post('api/user/', user, this.usr).then(function (response) {
                 this.$dispatch('update-users', response.data);
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
