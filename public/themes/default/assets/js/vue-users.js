@@ -32,7 +32,7 @@ Vue.component('users-create-view', {
 Vue.component('users-edit-view', {
     template: '#update-existing-user',
 
-    props: ['userid'],
+    props: ['user-id'],
 
     data() {
         return {
@@ -46,8 +46,8 @@ Vue.component('users-edit-view', {
     },
 
     created() {
-        this.fetchUserData(userid)
-        console.log(userid);
+        this.fetchUserData(user-id)
+        console.log(user-id);
     },
 
     methods: {
