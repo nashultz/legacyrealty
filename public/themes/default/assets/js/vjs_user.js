@@ -11203,6 +11203,7 @@ _vue2.default.component('users-edit-view', {
     },
     created: function created(user) {
         this.fetchUserData(user);
+        console.log(user);
     },
 
 

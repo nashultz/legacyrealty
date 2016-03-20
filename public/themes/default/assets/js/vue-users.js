@@ -47,6 +47,7 @@ Vue.component('users-edit-view', {
 
     created(user) {
         this.fetchUserData(user)
+        console.log(user);
     },
 
     methods: {
