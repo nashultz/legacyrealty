@@ -11189,7 +11189,7 @@ _vue2.default.component('users-create-view', {
 _vue2.default.component('users-edit-view', {
     template: '#update-existing-user',
 
-    props: ['user-id'],
+    props: ['userdata'],
 
     data: function data() {
         return {
@@ -11201,23 +11201,23 @@ _vue2.default.component('users-edit-view', {
             }
         };
     },
-    created: function created() {
-        this.fetchUserData(user - id);
-        console.log(user - id);
+    created: function created(userdata) {
+        this.fetchUserData(userdata);
+        console.log(userdata);
     },
 
 
     methods: {
-        fetchUserData: function fetchUserData(user) {
-            this.$http.get('api/user/' + user).then(function (response) {
+        fetchUserData: function fetchUserData(userdata) {
+            this.$http.get('api/user/' + userdata.id).then(function (response) {
                 this.u = response.data;
             }, function (response) {
                 this.$dispatch('error-handler', response.data);
             });
         },
-        updateUser: function updateUser(e, user) {
+        updateUser: function updateUser(u, e) {
             e.preventDefault();
-            this.$http.post('api/user/', user, this.usr).then(function (response) {
+            this.$http.post('api/user/' + u, this.user).then(function (response) {
                 this.$dispatch('update-users', response.data);
             }, function (response) {
                 this.$dispatch('error-handler', response.data);

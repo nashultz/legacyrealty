@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 <tr v-for="user in users">
-                    <th><a @click="currentView='users-edit-view'" :user-id="user.id">@{{user.name}}</a></th>
+                    <th><a @click="currentView='users-edit-view'" :user="user">@{{user.name}}</a></th>
                     <th>@{{user.email}}</th>
                     <th>
                         <a href="#"><i class="fa fa-fw fa-edit"></i></a>
@@ -85,7 +85,7 @@
 <template id="update-existing-user">
     <div   v-for="usr in u">
         <h3>Edit User: @{{ u.name }}</h3>
-        <form @submit="updateUser">
+        <form @submit="updateUser(u.id)">
         {{csrf_field()}}
         <div class="form-group">
             {!! Form::label('name') !!}
