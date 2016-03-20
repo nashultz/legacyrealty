@@ -13,7 +13,7 @@ class UpdateUserRequest extends Request
      */
     public function authorize()
     {
-        if($this->route('users') == 1)
+        if($this->route('users') == 0)
         {
             return false;
         }

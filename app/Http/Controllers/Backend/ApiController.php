@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Legacy\Http\Requests;
 use Legacy\Http\Requests\StoreUserRequest;
+use Legacy\Http\Requests\UpdateUserRequest;
 use Legacy\User;
 
 class ApiController extends Controller
@@ -38,7 +39,7 @@ class ApiController extends Controller
         return $this->users->findOrFail($id);
     }
 
-    public function updateUser(Requests\UpdateUserRequest $request)
+    public function updateUser(UpdateUserRequest $request)
     {
         $user = $this->users->create($request->only('name','email','password'));
 
