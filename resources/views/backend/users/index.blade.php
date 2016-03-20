@@ -83,27 +83,29 @@
     </form>
 </template>
 <template id="update-existing-user">
-    <h3>Edit User: @{{ u.name }}</h3>
-    <form @submit="updateUser">
-    {{csrf_field()}}
-    <div class="form-group">
-        {!! Form::label('name') !!}
-        {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'u.name']) !!}
+    <div   v-for="usr in u">
+        <h3>Edit User: @{{ u.name }}</h3>
+        <form @submit="updateUser">
+        {{csrf_field()}}
+        <div class="form-group">
+            {!! Form::label('name') !!}
+            {!! Form::text('name',null,['class'=>'form-control', 'v-model'=>'usr.name']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('email') !!}
+            {!! Form::email('email',null,['class'=>'form-control', 'v-model'=>'usr.email']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('password') !!}
+            {!! Form::password('password', ['class'=>'form-control', 'v-model'=>'usr.password']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('password_confirmation') !!}
+            {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'usr.password_confirmation']) !!}
+        </div>
+        {!! Form::submit('Update User',['class'=>'btn btn-success']) !!}
+        </form>
     </div>
-    <div class="form-group">
-        {!! Form::label('email') !!}
-        {!! Form::email('email',null,['class'=>'form-control', 'v-model'=>'u.email']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('password') !!}
-        {!! Form::password('password', ['class'=>'form-control', 'v-model'=>'u.password']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('password_confirmation') !!}
-        {!! Form::password('password_confirmation', ['class'=>'form-control', 'v-model'=>'u.password_confirmation']) !!}
-    </div>
-    {!! Form::submit('Update User',['class'=>'btn btn-success']) !!}
-    </form>
 </template>
 @endsection
 
