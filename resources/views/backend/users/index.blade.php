@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 <tr v-for="user in users">
-                    <th><a @click="currentView='users-edit-view'" v-with="user">@{{user.name}}</a></th>
+                    <th><a @click="currentView='users-edit-view'">@{{user.name}}</a></th>
                     <th>@{{user.email}}</th>
                     <th>
                         <a href="#"><i class="fa fa-fw fa-edit"></i></a>
@@ -56,7 +56,7 @@
         </table>
     </div>
     <div class="col-lg-6">
-        <component :is="currentView"></component>
+        <component :is="currentView"  v-with="user"></component>
     </div>
 </div>
 <template id="create-new-user">
