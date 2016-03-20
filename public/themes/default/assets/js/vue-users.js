@@ -36,7 +36,6 @@ Vue.component('users-edit-view', {
 
     data() {
         return {
-            user: [user.id],
             u: {
                 name: null,
                 email: null,
@@ -47,8 +46,8 @@ Vue.component('users-edit-view', {
     },
 
     created() {
-        this.fetchUserData(this.user)
-        console.log(this.user);
+        this.fetchUserData(user)
+        console.log(user);
     },
 
     methods: {

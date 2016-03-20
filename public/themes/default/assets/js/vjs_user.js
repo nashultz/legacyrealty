@@ -11193,7 +11193,6 @@ _vue2.default.component('users-edit-view', {
 
     data: function data() {
         return {
-            user: [user.id],
             u: {
                 name: null,
                 email: null,
@@ -11203,8 +11202,8 @@ _vue2.default.component('users-edit-view', {
         };
     },
     created: function created() {
-        this.fetchUserData(this.user);
-        console.log(this.user);
+        this.fetchUserData(user);
+        console.log(user);
     },
 
 
