@@ -12,6 +12,8 @@ Route::get('auth/logout', ['as'=>'auth.logout','uses'=>'Auth\AuthController@logo
 Route::group(['middleware'=>'auth', 'prefix'=>'mylegacy/api'], function() {
    Route::get('users', 'Backend\ApiController@users');
    Route::post('users', 'Backend\ApiController@storeUser');
+   Route::get('users/{id}', 'Backend\ApiController@editUser');
+   Route::post('users/{id}', 'Backend\ApiController@updateUser');
 });
 
 Route::group(['middleware' => 'auth'], function () {

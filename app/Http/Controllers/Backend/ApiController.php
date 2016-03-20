@@ -37,4 +37,13 @@ class ApiController extends Controller
     {
         return $this->users->findOrFail($id);
     }
+
+    public function updateUser(Requests\UpdateUserRequest $request)
+    {
+        $user = $this->users->create($request->only('name','email','password'));
+
+        flash()->success('User has been updtated.');
+
+        return $user;
+    }
 }

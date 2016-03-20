@@ -60,7 +60,7 @@ Vue.component('users-edit-view', {
         },
         updateUser(e, user) {
             e.preventDefault()
-            this.$http.post('api/users/', user, this.u).then(function(response) {
+            this.$http.post('api/users/', user, this.usr).then(function(response) {
                 this.$dispatch('update-users', response.data);
             }, function(response) {
                 this.$dispatch('error-handler', response.data);
