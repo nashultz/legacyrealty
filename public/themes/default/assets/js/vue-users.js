@@ -41,7 +41,8 @@ Vue.component('users-edit-view', {
                 email: null,
                 password: null,
                 password_confirmation: null
-            }
+            },
+            userdata: userdata
         }
     },
 
