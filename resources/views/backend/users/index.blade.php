@@ -83,7 +83,7 @@
     </form>
 </template>
 <template id="update-existing-user">
-    <div   v-for="usr in u">
+    <div   v-for="usr in user">
         <h3>Edit User: @{{ u.name }}</h3>
         <form @submit="updateUser(u.id)">
         {{csrf_field()}}

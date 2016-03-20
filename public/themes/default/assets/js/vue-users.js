@@ -32,7 +32,7 @@ Vue.component('users-create-view', {
 Vue.component('users-edit-view', {
     template: '#update-existing-user',
 
-    props: ['userdata'],
+    props: ['user'],
 
     data() {
         return {
@@ -42,7 +42,7 @@ Vue.component('users-edit-view', {
                 password: null,
                 password_confirmation: null
             },
-            userdata: userdata
+            user: user
         }
     },
 
@@ -52,13 +52,6 @@ Vue.component('users-edit-view', {
     },
 
     methods: {
-        fetchUserData(userdata) {
-          this.$http.get('api/user/'+ userdata.id).then(function(response) {
-              this.u = response.data;
-          }, function(response) {
-              this.$dispatch('error-handler', response.data);
-          });
-        },
         updateUser(u, e) {
             e.preventDefault()
             this.$http.post('api/user/' + u, this.user).then(function(response) {

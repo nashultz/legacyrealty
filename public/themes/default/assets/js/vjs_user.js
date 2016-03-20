@@ -11189,7 +11189,7 @@ _vue2.default.component('users-create-view', {
 _vue2.default.component('users-edit-view', {
     template: '#update-existing-user',
 
-    props: ['userdata'],
+    props: ['user'],
 
     data: function data() {
         return {
@@ -11199,7 +11199,7 @@ _vue2.default.component('users-edit-view', {
                 password: null,
                 password_confirmation: null
             },
-            userdata: userdata
+            user: user
         };
     },
     created: function created(userdata) {
@@ -11209,13 +11209,6 @@ _vue2.default.component('users-edit-view', {
 
 
     methods: {
-        fetchUserData: function fetchUserData(userdata) {
-            this.$http.get('api/user/' + userdata.id).then(function (response) {
-                this.u = response.data;
-            }, function (response) {
-                this.$dispatch('error-handler', response.data);
-            });
-        },
         updateUser: function updateUser(u, e) {
             e.preventDefault();
             this.$http.post('api/user/' + u, this.user).then(function (response) {
