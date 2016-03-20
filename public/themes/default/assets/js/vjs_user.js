@@ -11189,7 +11189,7 @@ _vue2.default.component('users-create-view', {
 _vue2.default.component('users-edit-view', {
     template: '#update-existing-user',
 
-    props: ['user'],
+    props: ['userid'],
 
     data: function data() {
         return {
@@ -11202,8 +11202,8 @@ _vue2.default.component('users-edit-view', {
         };
     },
     created: function created() {
-        this.fetchUserData(user);
-        console.log(user);
+        this.fetchUserData(userid);
+        console.log(userid);
     },
 
 
