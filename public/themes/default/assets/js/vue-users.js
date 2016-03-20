@@ -32,7 +32,7 @@ Vue.component('users-create-view', {
 Vue.component('users-edit-view', {
     template: '#update-existing-user',
 
-    props: ['user'],
+    props: 'user',
 
     data() {
         return {
