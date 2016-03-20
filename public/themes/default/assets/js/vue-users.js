@@ -55,7 +55,7 @@ Vue.component('users-edit-view', {
               this.u = response.data;
           }, function(response) {
               this.$dispatch('error-handler', response.data);
-          }.bind(this));
+          });
             console.log(this.u);
         },
         updateUser(e, user) {
